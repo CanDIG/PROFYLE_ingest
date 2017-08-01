@@ -136,16 +136,19 @@ class GA4GHRepo(object):
 
     def __exit__(self, extype, value, traceback):
         self._repo.commit()
+        self._repo.verify()
         self._repo.close()
 
     def add_individual(self, ga4gh_individual):
         person = ga4gh_individual.get_individual()
         self._repo.insertIndividual(person)
         self._repo.commit()
+        self._repo.verify()
 
     def add_dataset(self, dataset):
         self._repo.addDataset(dataset)
         self._repo.commit()
+        self._repo.verify()
 
 
 def main(repo_filename, profyle_dir):
@@ -161,7 +164,6 @@ def main(repo_filename, profyle_dir):
             donor_name = os.path.basename(donor_dir)
             print(donor_name)
             donor_file = os.path.join(donor_dir, donor_name+'.json')
-            print(donor_file)
 
             profyle_individual = json.loads(open(donor_file).read())
             person = GA4GHIndividual(dataset, profyle_individual)
