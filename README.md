@@ -2,7 +2,13 @@
 
 Routines for ingesting PROFYLE metadata into a GA4GH Reads & Variants server
 for powering a dashboard.  Requires [ga4gh-server](https://github.com/ga4gh/ga4gh-server)
-and [docopt](http://docopt.readthedocs.io/en/latest/)
+and [docopt](http://docopt.readthedocs.io/en/latest/).
+
+TODO:
+    Fix issue with ingesting attributes list
+    ingest biosamples
+    ingest experiments/analyses
+    update existing repo rather than overwriting
 
 You can run the ingestion and test a server with the resulting repo as follows:
 
@@ -80,4 +86,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 #  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ",
 #  "profyleid": "PRO-000BC2"
 #}
+
+$ curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' \
+    http://127.0.0.1:8000/individuals/WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ | jq '.'
 ```
