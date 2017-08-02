@@ -12,7 +12,7 @@ TODO:
 
 You can run the ingestion and test a server with the resulting repo as follows:
 
-```
+```bash
 # make the repo
 $ mkdir ga4gh-example-data
 $ ./create_repo.py ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
@@ -24,69 +24,124 @@ $ ga4gh-server
 ```
 
 and then, from another terminal:
-```
+
+```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
     http://127.0.0.1:8000/datasets/search \
     | jq '.'
-#{
-#  "datasets": [
-#    {
-#      "description": "PROFYLE test metadata",
-#      "id": "WyJQUk9GWUxFIl0",
-#      "name": "PROFYLE"
-#    }
-#  ]
-#}
-
+```
+```JSON
+{
+  "datasets": [
+    {
+      "description": "PROFYLE test metadata",
+      "id": "WyJQUk9GWUxFIl0",
+      "name": "PROFYLE"
+    }
+  ]
+}
+```
+```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
     -d '{ "datasetId": "WyJQUk9GWUxFIl0" }' http://127.0.0.1:8000/individuals/search \
     | jq '.individuals[] | {ga4ghid: .id, profyleid: .name}'
-
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ",
-#  "profyleid": "PRO-00001A"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMkIiXQ",
-#  "profyleid": "PRO-00002B"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwM0MiXQ",
-#  "profyleid": "PRO-00003C"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxMk4iXQ",
-#  "profyleid": "PRO-00012N"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxM1AiXQ",
-#  "profyleid": "PRO-00013P"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNVMiXQ",
-#  "profyleid": "PRO-00015S"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNlQiXQ",
-#  "profyleid": "PRO-00016T"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxN1UiXQ",
-#  "profyleid": "PRO-00017U"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxOVciXQ",
-#  "profyleid": "PRO-00019W"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ",
-#  "profyleid": "PRO-000BC1"
-#}
-#{
-#  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ",
-#  "profyleid": "PRO-000BC2"
-#}
+```
+```JSON
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ",
+  "profyleid": "PRO-00001A"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMkIiXQ",
+  "profyleid": "PRO-00002B"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwM0MiXQ",
+  "profyleid": "PRO-00003C"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxMk4iXQ",
+  "profyleid": "PRO-00012N"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxM1AiXQ",
+  "profyleid": "PRO-00013P"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNVMiXQ",
+  "profyleid": "PRO-00015S"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNlQiXQ",
+  "profyleid": "PRO-00016T"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxN1UiXQ",
+  "profyleid": "PRO-00017U"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxOVciXQ",
+  "profyleid": "PRO-00019W"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ",
+  "profyleid": "PRO-000BC1"
+}
+{
+  "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ",
+  "profyleid": "PRO-000BC2"
+}
 
 $ curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' \
     http://127.0.0.1:8000/individuals/WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ | jq '.'
+{
+  "species": {
+    "term": "Homo sapiens",
+    "termId": "NCBITaxon:9606"
+  },
+  "attributes": {
+    "attr": {
+      "internal_id": {
+        "values": [
+          {
+            "stringValue": "POG669"
+          }
+        ]
+      },
+      "recruitment_team": {
+        "values": [
+          {
+            "attributes": {
+              "attr": {
+                "province": {
+                  "values": [
+                    {
+                      "stringValue": "British Columbia"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "attr": {
+                "hospital": {
+                  "values": [
+                    {
+                      "stringValue": "BC cancer agency"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ",
+  "datasetId": "WyJQUk9GWUxFIl0",
+  "name": "PRO-000BC1"
+}
 ```

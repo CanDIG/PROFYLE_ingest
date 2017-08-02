@@ -58,23 +58,26 @@ class AttributesList(object):
             return typenames[type(value)]
         return 'string_value'
 
-    def add(self, name, value, value_type=None):
-        if value_type is None:
-            value_type = self._attrtype(value)
-        if value_type == "attributes":
-            self._dict[name] = {"values": [value_type, value.as_dict()]}
+    def add(self, name, value):
+        if value is None:   # don't add empty fields
+            return
+        if isinstance(value, AttributesList):
+            self._dict[name] = value.as_dict()
         else:
-            self._dict[name] = {"values": [value_type, value]}
+            self._dict[name] = value
 
-    def add_from_dict(self, d, name, value_type=None):
+    def add_from_dict(self, d, name):
         if name not in d:
             return
-        if d[name] is None and value_type is None:
+        if d[name] is None:
             return
-        self.add(name, d[name], value_type)
+        self.add(name, d[name])
 
     def as_dict(self):
         return self._dict
+
+    def __str__(self):
+        return(str(self._dict))
 
 
 class GA4GHIndividual(object):
@@ -96,28 +99,30 @@ class GA4GHIndividual(object):
                 self.individual.populateFromJson('{' + _female + '}')
 
         self.attrs = AttributesList()
-        self.attrs.add_from_dict(profyle_individual, 'ethnicity',
-                                                     'string_value')
-        self.attrs.add_from_dict(profyle_individual, 'disease',
-                                                     'string_value')
-        self.attrs.add_from_dict(profyle_individual, 'age', 'int32_value')
-        self.attrs.add_from_dict(profyle_individual, 'profyle_regional_id',
-                                                     'string_value')
-        self.attrs.add_from_dict(profyle_individual, 'internal_id',
-                                                     'string_value')
+        self.attrs.add_from_dict(profyle_individual, 'ethnicity')
+        self.attrs.add_from_dict(profyle_individual, 'disease')
+        self.attrs.add_from_dict(profyle_individual, 'age')
+        self.attrs.add_from_dict(profyle_individual, 'profyle_regional_id')
+        self.attrs.add_from_dict(profyle_individual, 'internal_id')
 
         team = AttributesList()
         profyle_rec_team = profyle_individual['recruitement_team']
 
-        team.add_from_dict(profyle_rec_team, "group_name", "string_value")
-        team.add_from_dict(profyle_rec_team, "hospital", "string_value")
-        team.add_from_dict(profyle_rec_team, "province", "string_value")
+        team.add_from_dict(profyle_rec_team, "group_name")
+        team.add_from_dict(profyle_rec_team, "hospital")
+        team.add_from_dict(profyle_rec_team, "province")
         self.attrs.add('recruitment_team', team)
 
         self.individual.setAttributes(self.attrs.as_dict())
 
     def get_individual(self):
         return self.individual
+
+    def get_attributes(self):
+        return self.attrs
+
+    def __str__(self):
+        return str(self.individual.toProtocolElement())
 
 
 class GA4GHRepo(object):
@@ -146,13 +151,14 @@ class GA4GHRepo(object):
         self._repo.verify()
 
     def add_dataset(self, dataset):
-        self._repo.addDataset(dataset)
+        self._repo.insertDataset(dataset)
         self._repo.commit()
         self._repo.verify()
 
 
 def main(repo_filename, profyle_dir):
     dataset = datasets.Dataset("PROFYLE")
+    dataset.setDescription("PROFYLE test metadata")
 
     with GA4GHRepo(repo_filename) as repo:
         repo.add_dataset(dataset)
