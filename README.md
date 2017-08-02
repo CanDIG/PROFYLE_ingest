@@ -91,9 +91,12 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
   "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ",
   "profyleid": "PRO-000BC2"
 }
-
-$ curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' \
+```
+```bash
+curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' \
     http://127.0.0.1:8000/individuals/WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ | jq '.'
+```
+```JSON
 {
   "species": {
     "term": "Homo sapiens",
