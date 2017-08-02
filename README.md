@@ -5,7 +5,6 @@ for powering a dashboard.  Requires [ga4gh-server](https://github.com/ga4gh/ga4g
 and [docopt](http://docopt.readthedocs.io/en/latest/).
 
 TODO:
-- Fix issue with ingesting attributes list
 - ingest biosamples
 - ingest experiments/analyses
 - update existing repo rather than overwriting
