@@ -5,9 +5,9 @@ for powering a dashboard.  Requires [ga4gh-server](https://github.com/ga4gh/ga4g
 and [docopt](http://docopt.readthedocs.io/en/latest/).
 
 TODO:
-- ingest biosamples
 - ingest experiments/analyses
 - update existing repo rather than overwriting
+- make use of existing jsonschema for validation/object creation
 
 You can run the ingestion and test a server with the resulting repo as follows:
 
@@ -19,7 +19,7 @@ $ ./create_repo.py ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root
 # fix for odd ga4gh server config
 $ mkdir -p ga4gh/server/templates
 $ touch ga4gh/server/templates/initial_peers.txt
-$ ga4gh-server
+$ ga4gh_server
 ```
 
 and then, from another terminal:
@@ -145,5 +145,102 @@ curl -X GET --header 'Content-Type: application/json' --header 'Accept: applicat
   "id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ",
   "datasetId": "WyJQUk9GWUxFIl0",
   "name": "PRO-000BC1"
+}
+```
+
+```bash
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
+    -d '{ "datasetId": "WyJQUk9GWUxFIl0" }' http://127.0.0.1:8000/biosamples/search \
+    | jq '.biosamples[] | {name: .name, individual_ga4gh_id: .individualId}'
+```
+
+```JSON
+{
+  "name": "PRO-00001A_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ"
+}
+{
+  "name": "PRO-00001A_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ"
+}
+{
+  "name": "PRO-00002B_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMkIiXQ"
+}
+{
+  "name": "PRO-00002B_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMkIiXQ"
+}
+{
+  "name": "PRO-00003C_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwM0MiXQ"
+}
+{
+  "name": "PRO-00003C_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwM0MiXQ"
+}
+{
+  "name": "PRO-00012N_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxMk4iXQ"
+}
+{
+  "name": "PRO-00012N_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxMk4iXQ"
+}
+{
+  "name": "PRO-00013P_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxM1AiXQ"
+}
+{
+  "name": "PRO-00013P_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxM1AiXQ"
+}
+{
+  "name": "PRO-00015S_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNVMiXQ"
+}
+{
+  "name": "PRO-00015S_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNVMiXQ"
+}
+{
+  "name": "PRO-00016T_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNlQiXQ"
+}
+{
+  "name": "PRO-00016T_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNlQiXQ"
+}
+{
+  "name": "PRO-00017U_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxN1UiXQ"
+}
+{
+  "name": "PRO-00017U_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxN1UiXQ"
+}
+{
+  "name": "PRO-00019W_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxOVciXQ"
+}
+{
+  "name": "PRO-00019W_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxOVciXQ"
+}
+{
+  "name": "PRO-000BC1_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ"
+}
+{
+  "name": "PRO-000BC1_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ"
+}
+{
+  "name": "PRO-000BC2_T1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ"
+}
+{
+  "name": "PRO-000BC2_N1",
+  "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ"
 }
 ```

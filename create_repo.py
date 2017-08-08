@@ -6,6 +6,7 @@ TODO:
     ingest biosamples
     ingest experiments/analyses
     update existing repo rather than overwriting
+    make use of the jsonschema for the input data
 
 Usage:
   create_repo.py <repo_filename> <profyle_dir>
@@ -20,6 +21,7 @@ Options:
 from __future__ import print_function
 from docopt import docopt
 import json
+import datetime
 import os
 import glob
 import ga4gh.server.datarepo as repo
@@ -149,11 +151,52 @@ class GA4GHRepo(object):
         self._repo.insertIndividual(person)
         self._repo.commit()
         self._repo.verify()
+    
+    def add_sample(self, biosample):
+        self._repo.insertBiosample(biosample)
+        self._repo.commit()
+        self._repo.verify()
 
     def add_dataset(self, dataset):
         self._repo.insertDataset(dataset)
         self._repo.commit()
         self._repo.verify()
+
+
+def GA4GHBiosamples(dataset, ga4gh_individual, profyle_individual):
+    """
+    Takes sample information from a PROFYLE and creates a list of
+    GA4GH Biosample messages from it.
+    """
+    now = datetime.date.today()
+    nowstr = now.isoformat()
+
+    biosamplelist = []
+    for sample_name in profyle_individual['sample']:
+        sample = profyle_individual['sample'][sample_name]
+        biosample = biodata.Biosample(dataset, sample_name)
+
+        biosampledict = {"created": nowstr, "updated": nowstr}
+        biosampledict["individual_id"] = ga4gh_individual.get_individual().getId()
+        biosampledict["description"] = sample["remarks"]
+
+        # not 100% sure I'm doing handling the disease Ontology Term correctly
+        biosampledict["disease"] = {"term_id": profyle_individual["disease_ontology_uri"],
+                                    "term": profyle_individual["disease"]}
+
+        biosample.populateFromJson(json.dumps(biosampledict))
+
+        # put tissue type in attributes (biosample does not have tissuetype?)
+        # as well as tumour yes/no and storage location
+        attrs = AttributesList()
+        attrs.add_from_dict(sample, 'tissue_type')
+        attrs.add_from_dict(sample, 'tissue_type_ontology_url')
+        attrs.add_from_dict(sample, 'tumour')
+        attrs.add_from_dict(sample, 'storage_location')
+        biosample.setAttributes(attrs.as_dict())
+        biosamplelist.append(biosample)
+
+    return biosamplelist
 
 
 def main(repo_filename, profyle_dir):
@@ -173,8 +216,11 @@ def main(repo_filename, profyle_dir):
 
             profyle_individual = json.loads(open(donor_file).read())
             person = GA4GHIndividual(dataset, profyle_individual)
-
             repo.add_individual(person)
+
+            samples = GA4GHBiosamples(dataset, person, profyle_individual)
+            for sample in samples:
+                repo.add_sample(sample)
 
 
 if __name__ == "__main__":
