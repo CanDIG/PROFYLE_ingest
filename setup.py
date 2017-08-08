@@ -13,7 +13,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     "docopt",
-    "ga4gh-server"
+    "ga4gh-server",
+    "numpy"
 ]
 
 setup_requirements = [
