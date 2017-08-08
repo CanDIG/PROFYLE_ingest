@@ -46,7 +46,8 @@ class AttributesList(object):
 
     An Attribute list can contain other attribute lists.
 
-    See: https://github.com/ga4gh/ga4gh-schemas/blob/master/src/main/proto/ga4gh/common.proto#L191-L215
+    See:
+    https://github.com/ga4gh/ga4gh-schemas/blob/master/src/main/proto/ga4gh/common.proto#L191-L215
     """
     def __init__(self):
         self._dict = {}
@@ -151,7 +152,7 @@ class GA4GHRepo(object):
         self._repo.insertIndividual(person)
         self._repo.commit()
         self._repo.verify()
-    
+
     def add_sample(self, biosample):
         self._repo.insertBiosample(biosample)
         self._repo.commit()
@@ -170,6 +171,7 @@ def GA4GHBiosamples(dataset, ga4gh_individual, profyle_individual):
     """
     now = datetime.date.today()
     nowstr = now.isoformat()
+    ga4gh_individual_id = ga4gh_individual.get_individual().getId()
 
     biosamplelist = []
     for sample_name in profyle_individual['sample']:
@@ -177,12 +179,13 @@ def GA4GHBiosamples(dataset, ga4gh_individual, profyle_individual):
         biosample = biodata.Biosample(dataset, sample_name)
 
         biosampledict = {"created": nowstr, "updated": nowstr}
-        biosampledict["individual_id"] = ga4gh_individual.get_individual().getId()
+        biosampledict["individual_id"] = ga4gh_individual_id
         biosampledict["description"] = sample["remarks"]
 
         # not 100% sure I'm doing handling the disease Ontology Term correctly
-        biosampledict["disease"] = {"term_id": profyle_individual["disease_ontology_uri"],
-                                    "term": profyle_individual["disease"]}
+        disease = {"term_id": profyle_individual["disease_ontology_uri"],
+                   "term": profyle_individual["disease"]}
+        biosampledict["disease"] = disease
 
         biosample.populateFromJson(json.dumps(biosampledict))
 
@@ -199,7 +202,10 @@ def GA4GHBiosamples(dataset, ga4gh_individual, profyle_individual):
     return biosamplelist
 
 
-def main(repo_filename, profyle_dir):
+def main():
+    args = docopt(__doc__, version='create_repo 0.1')
+    repo_filename, profyle_dir = args['<repo_filename>'], args['<profyle_dir>']
+
     dataset = datasets.Dataset("PROFYLE")
     dataset.setDescription("PROFYLE test metadata")
 
@@ -224,5 +230,4 @@ def main(repo_filename, profyle_dir):
 
 
 if __name__ == "__main__":
-    args = docopt(__doc__, version='create_repo 0.1')
-    main(args['<repo_filename>'], args['<profyle_dir>'])
+    main()
