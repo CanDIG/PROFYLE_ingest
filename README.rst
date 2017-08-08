@@ -48,6 +48,7 @@ and then, from another terminal:
         | jq '.'
 
 giving:
+
 .. code:: JSON
 
     {
