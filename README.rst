@@ -3,8 +3,8 @@ PROFYLEingest
 ==============
 
 
-.. image:: https://img.shields.io/travis/ljdursi/PROFYLE_ingest.svg
-        :target: https://travis-ci.org/ljdursi/PROFYLE_ingest
+.. image:: https://img.shields.io/travis/CanDIG/PROFYLE_ingest.svg
+        :target: https://travis-ci.org/CanDIG/PROFYLE_ingest
 
 .. image:: https://pyup.io/repos/github/ljdursi/PROFYLE_ingest/shield.svg
      :target: https://pyup.io/repos/github/ljdursi/PROFYLE_ingest/
