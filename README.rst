@@ -25,13 +25,20 @@ TODO:
 - update existing repo rather than overwriting
 - make use of existing jsonschema for validation/object creation
 
-You can run the ingestion and test a server with the resulting repo as follows:
+You can run the ingestion and test a server with the resulting repo as follows (requires Python 2.7
+for the ga4gh reads/variants server:)
 
 .. code:: bash
 
+    # Install
+    $ virtualenv pitest
+    $ cd pitest
+    $ source bin/activate
+    $ pip install git+https://github.com/CanDIG/PROFYLE_ingest.git
+
     # make the repo
     $ mkdir ga4gh-example-data
-    $ ./create_repo.py ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
+    $ PROFYLE_ingest ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
 
     # fix for odd ga4gh server config
     $ mkdir -p ga4gh/server/templates
