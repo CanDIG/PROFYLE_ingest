@@ -11,20 +11,13 @@ PROFYLEingest
      :alt: Updates
 
 
-Routines for ingesting PROFYLE metadata into a GA4GH repository.
-
-* Free software: GNU General Public License v3
-
-
-Credits
----------
-
 Routines for ingesting PROFYLE metadata into a GA4GH Reads & Variants server
 for powering a dashboard.  Requires `ga4gh-server
 <https://github.com/ga4gh/ga4gh-server>`_
 and `docopt
 <http://docopt.readthedocs.io/en/latest/>`_.
 
+* Free software: GNU General Public License v3
 
 TODO:
 
@@ -35,6 +28,7 @@ TODO:
 You can run the ingestion and test a server with the resulting repo as follows:
 
 .. code:: bash
+
     # make the repo
     $ mkdir ga4gh-example-data
     $ ./create_repo.py ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
@@ -48,12 +42,14 @@ You can run the ingestion and test a server with the resulting repo as follows:
 and then, from another terminal:
 
 .. code:: bash
+
     curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
         http://127.0.0.1:8000/datasets/search \
         | jq '.'
 
 giving:
 .. code:: JSON
+
     {
       "datasets": [
         {
@@ -67,11 +63,13 @@ giving:
 One can search for individuals within that dataset:
 
 .. code:: bash
+
     curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
         -d '{ "datasetId": "WyJQUk9GWUxFIl0" }' http://127.0.0.1:8000/individuals/search \
         | jq '.individuals[] | {ga4ghid: .id, profyleid: .name}'
 
 .. code:: JSON
+
     {
       "ga4ghid": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ",
       "profyleid": "PRO-00001A"
@@ -120,10 +118,12 @@ One can search for individuals within that dataset:
 get the data for a specific individual:
 
 .. code:: bash
+
     curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' \
         http://127.0.0.1:8000/individuals/WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ | jq '.'
 
 .. code:: JSON
+
     {
       "species": {
         "term": "Homo sapiens",
@@ -178,11 +178,13 @@ get the data for a specific individual:
 or list biosamples:
 
 .. code:: bash
+
     curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
         -d '{ "datasetId": "WyJQUk9GWUxFIl0" }' http://127.0.0.1:8000/biosamples/search \
         | jq '.biosamples[] | {name: .name, individual_ga4gh_id: .individualId}'
 
 .. code:: JSON
+
     {
       "name": "PRO-00001A_N1",
       "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ"
