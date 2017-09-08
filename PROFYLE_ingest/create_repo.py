@@ -3,8 +3,8 @@
 Currently only creates individuals, and overwrites existing repo if it exists.
 
 TODO:
-    ingest biosamples
-    ingest experiments/analyses
+    ingest experiments
+    ingest analyses
     update existing repo rather than overwriting
     make use of the jsonschema for the input data
 
@@ -51,15 +51,6 @@ class AttributesList(object):
     """
     def __init__(self):
         self._dict = {}
-
-    def _attrtype(self, value):
-        typenames = {int: 'int64_value', bool: 'bool_value',
-                     float: 'double_value', str: 'string_value'}
-        if isinstance(value, AttributesList):
-            return "attributes"
-        if type(value) in typenames:
-            return typenames[type(value)]
-        return 'string_value'
 
     def add(self, name, value):
         if value is None:   # don't add empty fields
@@ -158,6 +149,12 @@ class GA4GHRepo(object):
         self._repo.commit()
         self._repo.verify()
 
+    def add_experiment(self, ga4gh_experiment):
+        experiment = ga4gh_experiment.get_experiment()
+        self._repo.insertExperiment(experiment)
+        self._repo.commit()
+        self._repo.verify()
+
     def add_dataset(self, dataset):
         self._repo.insertDataset(dataset)
         self._repo.commit()
@@ -202,8 +199,43 @@ def GA4GHBiosamples(dataset, ga4gh_individual, profyle_individual):
     return biosamplelist
 
 
+class GA4GHExperiment(object):
+    def __init__(self, ga4gh_biosample, ga4gh_individual, profyle_json):
+        # TODO: need a better way of coming up with a unique name from the JSON
+        name = profyle_json["sample_id"] + "." + profyle_json["assay_type"]
+        if "experiment_type" in profyle_json:
+            if profyle_json["experiment_type"] is not None:
+                name += "." + profyle_json["experiment_type"]
+
+        expt = biodata.Experiment(name)
+        if "assay_type" in profyle_json:
+            expt.setMolecule(profyle_json["assay_type"].split('-')[0])
+        if "sequencing_center" in profyle_json:
+            expt.setSequencingCenter(profyle_json["sequencing_center"])
+
+        attrs = AttributesList()
+
+        attrs.add('biosample_id', ga4gh_biosample.getId())
+        attrs.add('individual_id', ga4gh_individual.getId())
+        attrs.add_from_dict(profyle_json, 'assay_type')
+        attrs.add_from_dict(profyle_json, 'experiment_type')
+        attrs.add_from_dict(profyle_json, 'protocol_type')
+        attrs.add_from_dict(profyle_json, 'raw_data')
+
+        self.experiment = expt
+        print(attrs)
+        print(attrs.as_dict)
+        self.experiment.setAttributes(attrs.as_dict())
+
+    def get_experiment(self):
+        return self.experiment
+
+    def __str__(self):
+        return str(self.experiment.toProtocolElement())
+
+
 def main():
-    args = docopt(__doc__, version='create_repo 0.1')
+    args = docopt(__doc__, version='create_repo 0.2')
     repo_filename, profyle_dir = args['<repo_filename>'], args['<profyle_dir>']
 
     dataset = datasets.Dataset("PROFYLE")
@@ -226,7 +258,20 @@ def main():
 
             samples = GA4GHBiosamples(dataset, person, profyle_individual)
             for sample in samples:
+                print(" ", sample.getName())
                 repo.add_sample(sample)
+
+                # for each sample, process any experiments which may exist
+                sample_name = sample.getName()
+                sample_dir = os.path.join(donor_dir, sample_name)
+                for root, _, filenames in os.walk(sample_dir):
+                    for filename in filenames:
+                        path = os.path.join(root, filename)
+                        base, extension = os.path.splitext(path)
+                        if extension == '.json':
+                            content = json.loads(open(path).read())
+                            expt = GA4GHExperiment(sample, person.get_individual(), content)
+                            repo.add_experiment(expt)
 
 
 if __name__ == "__main__":
