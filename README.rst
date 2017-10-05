@@ -34,7 +34,9 @@ for the ga4gh reads/variants server:)
     $ virtualenv pitest
     $ cd pitest
     $ source bin/activate
-    $ pip install git+https://github.com/CanDIG/PROFYLE_ingest.git --process-dependency-links
+    $ pip install git+https://github.com/CanDIG/ga4gh-schemas.git@experiment#egg=ga4gh_schemas
+    $ pip install git+https://github.com/CanDIG/ga4gh-server.git@experiment#egg=ga4gh_server
+    $ pip install git+https://github.com/CanDIG/PROFYLE_ingest.git
 
     # make the repo
     $ mkdir ga4gh-example-data
