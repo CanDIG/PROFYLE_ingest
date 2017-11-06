@@ -56,4 +56,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     setup_requires=setup_requirements,
+    dependency_links=[
+     "git+https://github.com/CanDIG/ga4gh-server.git@experiment#egg=ga4gh_server"
+    ]
 )
