@@ -223,8 +223,6 @@ class GA4GHExperiment(object):
         attrs.add_from_dict(profyle_json, 'raw_data')
 
         self.experiment = expt
-        print(attrs)
-        print(attrs.as_dict)
         self.experiment.setAttributes(attrs.as_dict())
 
     def get_experiment(self):
@@ -270,7 +268,9 @@ def main():
                         base, extension = os.path.splitext(path)
                         if extension == '.json':
                             content = json.loads(open(path).read())
-                            expt = GA4GHExperiment(sample, person.get_individual(), content)
+                            expt = GA4GHExperiment(sample,
+                                                   person.get_individual(),
+                                                   content)
                             repo.add_experiment(expt)
 
 
