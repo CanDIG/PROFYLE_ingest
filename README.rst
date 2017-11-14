@@ -31,22 +31,19 @@ for the ga4gh reads/variants server:)
 .. code:: bash
 
     # Install
-    $ virtualenv pitest
-    $ cd pitest
-    $ source bin/activate
-    $ pip install git+https://github.com/CanDIG/ga4gh-schemas.git@experiment#egg=ga4gh_schemas
-    $ pip install git+https://github.com/CanDIG/ga4gh-client.git@experiment#egg=ga4gh_client
-    $ pip install git+https://github.com/CanDIG/ga4gh-server.git@experiment#egg=ga4gh_server
-    $ pip install git+https://github.com/CanDIG/PROFYLE_ingest.git
+    virtualenv pitest
+    cd pitest
+    source bin/activate
+    pip install git+https://github.com/CanDIG/ga4gh-schemas.git@experiment_genotype#egg=ga4gh_schemas
+    pip install git+https://github.com/CanDIG/ga4gh-client.git@experiment_genotype#egg=ga4gh_client
+    pip install git+https://github.com/CanDIG/ga4gh-server.git@experiment_genotype#egg=ga4gh_server
+    pip install git+https://github.com/CanDIG/PROFYLE_ingest.git
 
     # make the repo
-    $ mkdir ga4gh-example-data
-    $ PROFYLE_ingest ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
+    mkdir ga4gh-example-data
+    PROFYLE_ingest ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
 
-    # fix for odd ga4gh server config
-    $ mkdir -p ga4gh/server/templates
-    $ touch ga4gh/server/templates/initial_peers.txt
-    $ ga4gh_server
+    ga4gh_server
 
 
 and then, from another terminal:
