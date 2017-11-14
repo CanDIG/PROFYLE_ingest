@@ -130,60 +130,8 @@ get the data for a specific individual:
     curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' \
         http://127.0.0.1:8000/individuals/WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ | jq '.'
 
-.. code:: JSON
 
-    {
-      "species": {
-        "term": "Homo sapiens",
-        "termId": "NCBITaxon:9606"
-      },
-      "attributes": {
-        "attr": {
-          "internal_id": {
-            "values": [
-              {
-                "stringValue": "POG669"
-              }
-            ]
-          },
-          "recruitment_team": {
-            "values": [
-              {
-                "attributes": {
-                  "attr": {
-                    "province": {
-                      "values": [
-                        {
-                          "stringValue": "British Columbia"
-                        }
-                      ]
-                    }
-                  }
-                }
-              },
-              {
-                "attributes": {
-                  "attr": {
-                    "hospital": {
-                      "values": [
-                        {
-                          "stringValue": "BC cancer agency"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        }
-      },
-      "id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ",
-      "datasetId": "WyJQUk9GWUxFIl0",
-      "name": "PRO-000BC1"
-    }
-
-or list biosamples:
+list biosamples.:
 
 .. code:: bash
 
@@ -191,93 +139,10 @@ or list biosamples:
         -d '{ "datasetId": "WyJQUk9GWUxFIl0" }' http://127.0.0.1:8000/biosamples/search \
         | jq '.biosamples[] | {name: .name, individual_ga4gh_id: .individualId}'
 
-.. code:: JSON
+or experiments:
 
-    {
-      "name": "PRO-00001A_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ"
-    }
-    {
-      "name": "PRO-00001A_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMUEiXQ"
-    }
-    {
-      "name": "PRO-00002B_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMkIiXQ"
-    }
-    {
-      "name": "PRO-00002B_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwMkIiXQ"
-    }
-    {
-      "name": "PRO-00003C_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwM0MiXQ"
-    }
-    {
-      "name": "PRO-00003C_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAwM0MiXQ"
-    }
-    {
-      "name": "PRO-00012N_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxMk4iXQ"
-    }
-    {
-      "name": "PRO-00012N_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxMk4iXQ"
-    }
-    {
-      "name": "PRO-00013P_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxM1AiXQ"
-    }
-    {
-      "name": "PRO-00013P_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxM1AiXQ"
-    }
-    {
-      "name": "PRO-00015S_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNVMiXQ"
-    }
-    {
-      "name": "PRO-00015S_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNVMiXQ"
-    }
-    {
-      "name": "PRO-00016T_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNlQiXQ"
-    }
-    {
-      "name": "PRO-00016T_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxNlQiXQ"
-    }
-    {
-      "name": "PRO-00017U_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxN1UiXQ"
-    }
-    {
-      "name": "PRO-00017U_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxN1UiXQ"
-    }
-    {
-      "name": "PRO-00019W_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxOVciXQ"
-    }
-    {
-      "name": "PRO-00019W_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDAxOVciXQ"
-    }
-    {
-      "name": "PRO-000BC1_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ"
-    }
-    {
-      "name": "PRO-000BC1_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzEiXQ"
-    }
-    {
-      "name": "PRO-000BC2_T1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ"
-    }
-    {
-      "name": "PRO-000BC2_N1",
-      "individual_ga4gh_id": "WyJQUk9GWUxFIiwiaSIsIlBSTy0wMDBCQzIiXQ"
-    }
+.. code:: bash
+
+     curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
+        -d '{ "datasetId": "WyJQUk9GWUxFIl0" }' http://127.0.0.1:8000/experiments/search \
+        | jq '.experiments[] | { name: .name, molecule: .molecule, sequencingCenter: .sequencingCenter }'
