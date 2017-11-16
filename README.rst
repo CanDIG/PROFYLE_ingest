@@ -34,9 +34,9 @@ for the ga4gh reads/variants server:)
     virtualenv pitest
     cd pitest
     source bin/activate
-    pip install git+https://github.com/CanDIG/ga4gh-schemas.git@experiment_genotype#egg=ga4gh_schemas
-    pip install git+https://github.com/CanDIG/ga4gh-client.git@experiment_genotype#egg=ga4gh_client
-    pip install git+https://github.com/CanDIG/ga4gh-server.git@experiment_genotype#egg=ga4gh_server
+    pip install git+https://github.com/CanDIG/ga4gh-schemas.git@master#egg=ga4gh_schemas
+    pip install git+https://github.com/CanDIG/ga4gh-client.git@mastere#egg=ga4gh_client
+    pip install git+https://github.com/CanDIG/ga4gh-server.git@master#egg=ga4gh_server
     pip install git+https://github.com/CanDIG/PROFYLE_ingest.git
 
     # make the repo
