@@ -1,0 +1,1085 @@
+
+{ "profyle": [
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00435",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2014-07-02",
+        "enrollment_approval_initials": "EZJ",
+        "date_of_upload_to_sFTP": "2014-04-05",
+        "tumor_board_presentation_date_and_analyses": "2017-07-17",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "90%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2015-03-18",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2016-07-25"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2012-03-15",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2017-10-19",
+        "panel_completion_date": "2015-03-04"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-04-06"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00753",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2012-12-18",
+        "enrollment_approval_initials": "EXV",
+        "date_of_upload_to_sFTP": "2012-05-04",
+        "tumor_board_presentation_date_and_analyses": "2017-04-26",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "25%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2014-02-17",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2016-11-11"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2013-04-05",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2017-06-11",
+        "panel_completion_date": "2015-02-08"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2012-07-11"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00369",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2014-03-28",
+        "enrollment_approval_initials": "DTK",
+        "date_of_upload_to_sFTP": "2013-02-16",
+        "tumor_board_presentation_date_and_analyses": "2013-08-23",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "73%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2013-07-15",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2012-11-27"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2015-08-11",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2013-05-24",
+        "panel_completion_date": "2014-09-01"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-09-20"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00825",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C3270",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2016-06-19",
+        "enrollment_approval_initials": "JTV",
+        "date_of_upload_to_sFTP": "2013-04-16",
+        "tumor_board_presentation_date_and_analyses": "2014-12-26",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "63%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2014-06-15",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2017-03-20"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2015-12-20",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2014-01-22",
+        "panel_completion_date": "2015-10-02"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-06-15"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00765",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2014-08-23",
+        "enrollment_approval_initials": "AYH",
+        "date_of_upload_to_sFTP": "2013-09-24",
+        "tumor_board_presentation_date_and_analyses": "2013-04-18",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "64%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2016-04-08",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2016-05-26"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2012-09-19",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2012-04-26",
+        "panel_completion_date": "2013-01-24"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2012-12-16"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00959",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2013-11-17",
+        "enrollment_approval_initials": "HTR",
+        "date_of_upload_to_sFTP": "2012-06-03",
+        "tumor_board_presentation_date_and_analyses": "2014-06-22",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "38%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2015-04-02",
+        "tumor_biopsy_anatomical_site": "Breast",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2012-09-17"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2014-02-27",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2013-07-04",
+        "panel_completion_date": "2015-08-18"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-11-04"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00653",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C3270",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "relapse",
+        "enrollment_approval_date": "2015-10-13",
+        "enrollment_approval_initials": "DYL",
+        "date_of_upload_to_sFTP": "2015-04-06",
+        "tumor_board_presentation_date_and_analyses": "2016-11-11",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "20%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2014-08-28",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2012-01-07"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2015-09-16",
+        "rna_library_construction_method": "nan",
+        "rna_sequencing_completion_date": "2016-03-10",
+        "panel_completion_date": "2015-04-10"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-05-17"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00808",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2014-06-06",
+        "enrollment_approval_initials": "APT",
+        "date_of_upload_to_sFTP": "2014-10-25",
+        "tumor_board_presentation_date_and_analyses": "2017-11-09",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "65%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2016-07-14",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-09-21"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2017-03-09",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2012-03-19",
+        "panel_completion_date": "2015-05-21"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-09-15"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00383",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2017-09-19",
+        "enrollment_approval_initials": "NBZ",
+        "date_of_upload_to_sFTP": "2017-09-12",
+        "tumor_board_presentation_date_and_analyses": "2017-08-27",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "73%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2015-04-16",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2014-09-22"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2017-12-05",
+        "rna_library_construction_method": "nan",
+        "rna_sequencing_completion_date": "2012-11-18",
+        "panel_completion_date": "2012-01-20"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-08-26"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00804",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2012-04-07",
+        "enrollment_approval_initials": "ERF",
+        "date_of_upload_to_sFTP": "2015-01-05",
+        "tumor_board_presentation_date_and_analyses": "2013-01-14",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "71%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2014-06-19",
+        "tumor_biopsy_anatomical_site": "Breast",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2013-12-09"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2013-05-19",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2014-09-08",
+        "panel_completion_date": "2014-11-25"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2013-12-21"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00404",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "primary",
+        "enrollment_approval_date": "2013-08-25",
+        "enrollment_approval_initials": "QYY",
+        "date_of_upload_to_sFTP": "2017-06-25",
+        "tumor_board_presentation_date_and_analyses": "2014-06-03",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "33%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2014-02-18",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2013-10-26"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2017-08-19",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2015-02-18",
+        "panel_completion_date": "2016-06-26"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-08-17"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00495",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2013-02-23",
+        "enrollment_approval_initials": "OES",
+        "date_of_upload_to_sFTP": "2016-12-08",
+        "tumor_board_presentation_date_and_analyses": "2013-11-12",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "9%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2012-03-17",
+        "tumor_biopsy_anatomical_site": "Breast",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2012-07-27"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2017-09-15",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2012-12-07",
+        "panel_completion_date": "2016-12-18"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2012-06-11"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00470",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2013-02-21",
+        "enrollment_approval_initials": "PLG",
+        "date_of_upload_to_sFTP": "2013-12-06",
+        "tumor_board_presentation_date_and_analyses": "2016-12-10",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "14%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2014-12-14",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2016-02-02"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2013-09-26",
+        "rna_library_construction_method": "nan",
+        "rna_sequencing_completion_date": "2016-01-01",
+        "panel_completion_date": "2017-02-27"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2012-01-02"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00690",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "relapse",
+        "enrollment_approval_date": "2012-02-14",
+        "enrollment_approval_initials": "WMC",
+        "date_of_upload_to_sFTP": "2016-12-16",
+        "tumor_board_presentation_date_and_analyses": "2016-08-18",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "56%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2015-10-28",
+        "tumor_biopsy_anatomical_site": "Breast",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2017-01-27"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2013-10-15",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2015-11-13",
+        "panel_completion_date": "2015-07-19"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-11-06"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00485",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2015-10-11",
+        "enrollment_approval_initials": "GVP",
+        "date_of_upload_to_sFTP": "2016-01-10",
+        "tumor_board_presentation_date_and_analyses": "2015-07-18",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "22%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2012-06-06",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2016-12-28"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2017-02-11",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2014-01-21",
+        "panel_completion_date": "2015-11-11"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-07-11"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00696",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "primary",
+        "enrollment_approval_date": "2013-05-24",
+        "enrollment_approval_initials": "DCM",
+        "date_of_upload_to_sFTP": "2013-12-27",
+        "tumor_board_presentation_date_and_analyses": "2014-11-11",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "17%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2014-10-11",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-12-05"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2017-08-21",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2017-07-19",
+        "panel_completion_date": "2012-02-06"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2017-09-04"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00291",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2013-07-02",
+        "enrollment_approval_initials": "YWZ",
+        "date_of_upload_to_sFTP": "2013-05-20",
+        "tumor_board_presentation_date_and_analyses": "2013-05-07",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "36%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2016-03-16",
+        "tumor_biopsy_anatomical_site": "Breast",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2017-03-17"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2012-11-12",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2017-07-10",
+        "panel_completion_date": "2016-04-21"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2013-05-21"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00251",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "relapse",
+        "enrollment_approval_date": "2012-12-16",
+        "enrollment_approval_initials": "QBN",
+        "date_of_upload_to_sFTP": "2014-05-25",
+        "tumor_board_presentation_date_and_analyses": "2016-11-11",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "68%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2012-03-14",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2012-11-10"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2015-01-27",
+        "rna_library_construction_method": "nan",
+        "rna_sequencing_completion_date": "2017-01-02",
+        "panel_completion_date": "2016-04-11"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2013-07-04"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00646",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C3270",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "primary",
+        "enrollment_approval_date": "2016-02-15",
+        "enrollment_approval_initials": "VZX",
+        "date_of_upload_to_sFTP": "2017-02-22",
+        "tumor_board_presentation_date_and_analyses": "2014-10-09",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "9%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2016-10-01",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2013-11-15"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2017-05-11",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2014-04-06",
+        "panel_completion_date": "2016-05-01"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-03-24"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00435",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C3270",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2017-01-10",
+        "enrollment_approval_initials": "IJH",
+        "date_of_upload_to_sFTP": "2012-01-02",
+        "tumor_board_presentation_date_and_analyses": "2016-02-26",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "27%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2012-06-09",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2013-02-08"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2016-07-12",
+        "rna_library_construction_method": "nan",
+        "rna_sequencing_completion_date": "2015-07-27",
+        "panel_completion_date": "2014-04-23"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2012-09-11"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00155",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "primary",
+        "enrollment_approval_date": "2013-03-22",
+        "enrollment_approval_initials": "RXG",
+        "date_of_upload_to_sFTP": "2014-05-18",
+        "tumor_board_presentation_date_and_analyses": "2015-03-19",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "11%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2014-11-01",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-01-23"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2015-10-25",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2015-06-27",
+        "panel_completion_date": "2012-12-07"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2016-06-01"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00920",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "primary",
+        "enrollment_approval_date": "2013-11-01",
+        "enrollment_approval_initials": "IKM",
+        "date_of_upload_to_sFTP": "2017-12-25",
+        "tumor_board_presentation_date_and_analyses": "2016-06-20",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "63%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2014-11-20",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2013-05-09"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2013-01-21",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2013-08-26",
+        "panel_completion_date": "2013-04-17"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2016-10-23"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00155",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2013-09-23",
+        "enrollment_approval_initials": "RKX",
+        "date_of_upload_to_sFTP": "2013-03-28",
+        "tumor_board_presentation_date_and_analyses": "2013-07-28",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "55%",
+        "normal_sample_source": "Liver",
+        "biopsy_data": "2015-06-05",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2014-11-03"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2017-09-14",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2015-12-05",
+        "panel_completion_date": "2014-03-24"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2016-11-19"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00645",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "relapse",
+        "enrollment_approval_date": "2014-05-08",
+        "enrollment_approval_initials": "IHY",
+        "date_of_upload_to_sFTP": "2014-12-25",
+        "tumor_board_presentation_date_and_analyses": "2013-12-10",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "79%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2014-12-02",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-05-17"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2014-12-26",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2017-04-19",
+        "panel_completion_date": "2017-12-02"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2012-12-14"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00900",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "metastatic",
+        "enrollment_approval_date": "2017-01-09",
+        "enrollment_approval_initials": "WTP",
+        "date_of_upload_to_sFTP": "2013-07-02",
+        "tumor_board_presentation_date_and_analyses": "2017-06-21",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "90%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2013-09-27",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2015-02-13"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2015-10-21",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2012-02-22",
+        "panel_completion_date": "2015-04-07"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-12-27"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00959",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "relapse",
+        "enrollment_approval_date": "2013-05-03",
+        "enrollment_approval_initials": "PLI",
+        "date_of_upload_to_sFTP": "2016-06-12",
+        "tumor_board_presentation_date_and_analyses": "2016-07-14",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "76%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2015-04-13",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2013-06-11"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2014-10-15",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2015-09-21",
+        "panel_completion_date": "2013-07-14"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2015-03-18"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00955",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2012-01-07",
+        "enrollment_approval_initials": "WYY",
+        "date_of_upload_to_sFTP": "2012-05-12",
+        "tumor_board_presentation_date_and_analyses": "2013-11-08",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "13%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2015-11-12",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-06-27"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2017-10-23",
+        "rna_library_construction_method": "Stranded poly mRNA",
+        "rna_sequencing_completion_date": "2015-12-14",
+        "panel_completion_date": "2016-10-07"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2015-09-18"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00228",
+        "regional_profiling_centre": "Vancouver",
+        "diagnosis": {
+            "term_id":"NCIT:C8972",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2012-04-04",
+        "enrollment_approval_initials": "WGL",
+        "date_of_upload_to_sFTP": "2014-04-25",
+        "tumor_board_presentation_date_and_analyses": "2014-09-19",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "60%",
+        "normal_sample_source": "Breast",
+        "biopsy_data": "2013-06-22",
+        "tumor_biopsy_anatomical_site": "Lung",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-09-07"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2013-03-01",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2017-02-18",
+        "panel_completion_date": "2012-03-08"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2014-10-07"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00945",
+        "regional_profiling_centre": "Montreal",
+        "diagnosis": {
+            "term_id":"NCIT:C4817",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "relapse",
+        "enrollment_approval_date": "2015-04-24",
+        "enrollment_approval_initials": "GZP",
+        "date_of_upload_to_sFTP": "2017-08-23",
+        "tumor_board_presentation_date_and_analyses": "2014-06-10",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "67%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2012-12-10",
+        "tumor_biopsy_anatomical_site": "Liver",
+        "biopsy_type": "Needle biopsy",
+        "sample_shipment_date": "2014-09-20"
+        },
+    "experiment": {
+        "dna_library_construction_method": "nan",
+        "wgs_sequencing_completion_date": "2013-04-27",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2014-05-16",
+        "panel_completion_date": "2016-07-26"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2015-08-01"
+        }
+    },
+
+    {
+    "individual": {
+        "patient_id": "PROFAKE-00799",
+        "regional_profiling_centre": "Toronto",
+        "diagnosis": {
+            "term_id":"NCIT:C8971",
+            "term":"fuzzywazzy score 100"
+            },
+        "pathology_type": "recurrent",
+        "enrollment_approval_date": "2015-03-08",
+        "enrollment_approval_initials": "WDG",
+        "date_of_upload_to_sFTP": "2014-10-08",
+        "tumor_board_presentation_date_and_analyses": "2015-06-27",
+        "comments": "No comments"
+        },
+    "biosample": {
+        "estimated_tumor_content": "52%",
+        "normal_sample_source": "Peripheral blood",
+        "biopsy_data": "2016-03-22",
+        "tumor_biopsy_anatomical_site": "Breast",
+        "biopsy_type": "Resection",
+        "sample_shipment_date": "2012-03-13"
+        },
+    "experiment": {
+        "dna_library_construction_method": "PCR free WGS",
+        "wgs_sequencing_completion_date": "2012-10-12",
+        "rna_library_construction_method": "Ribozero stranded",
+        "rna_sequencing_completion_date": "2017-05-01",
+        "panel_completion_date": "2016-08-05"
+        },
+    "analysis": {
+        "other_analysis_descriptor": "nan",
+        "other_analysis_completition_date": "2016-09-22"
+        }
+    }
+
+]
+}
