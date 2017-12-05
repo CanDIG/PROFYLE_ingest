@@ -35,10 +35,14 @@ for the ga4gh reads/variants server:)
     cd pitest
     source bin/activate
     pip install git+https://github.com/CanDIG/ga4gh-schemas.git@master#egg=ga4gh_schemas
-    pip install git+https://github.com/CanDIG/ga4gh-client.git@mastere#egg=ga4gh_client
+    pip install git+https://github.com/CanDIG/ga4gh-client.git@master#egg=ga4gh_client
     pip install git+https://github.com/CanDIG/ga4gh-server.git@master#egg=ga4gh_server
     pip install git+https://github.com/CanDIG/PROFYLE_ingest.git
 
+    # work around peers issue
+    mkdir -p ga4gh/server/templates/
+    touch ga4gh/server/templates/initial_peers.txt
+    
     # make the repo
     mkdir ga4gh-example-data
     PROFYLE_ingest ga4gh-example-data/registry.db /path/to/PROFYLE_metadata/root_folder_example/
