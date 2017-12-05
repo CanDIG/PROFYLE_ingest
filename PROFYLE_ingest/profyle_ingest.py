@@ -102,17 +102,17 @@ def main():
             biosample = Biosample(dataset, localId=patient_id)
             biosample_object = biosample.populateFromJson(
                 json.dumps(patient["biosample"]))
-            biosample_object.individual_id = individual_object.getId()
+            biosample_object._individual_id = individual_object.getId()
             # Experiment
             experiment = Experiment(dataset, localId=patient_id)
             experiment_object = experiment.populateFromJson(
                 json.dumps(patient["experiment"]))
-            experiment_object.biosample_id = biosample_object.getId()
+            experiment_object._biosample_id = biosample_object.getId()
             # Analysis            
             analysis = Analysis(dataset, localId=patient_id)
             analysis_object = analysis.populateFromJson(
                 json.dumps(patient["analysis"]))
-            analysis_object.experiment_id = experiment_object.getId()
+            analysis_object._experiment_id = experiment_object.getId()
             # Add object into the repo file
             repo.add_individual(individual_object)
             repo.add_biosample(biosample_object)
@@ -122,9 +122,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
 
