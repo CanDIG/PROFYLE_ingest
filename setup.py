@@ -34,7 +34,7 @@ setup(
     packages=find_packages(include=['PROFYLE_ingest']),
     entry_points={
         'console_scripts': [
-            'PROFYLE_ingest = PROFYLE_ingest.create_repo:main'
+            'PROFYLE_ingest = PROFYLE_ingest.profyle_ingest:main'
         ]
     },
     include_package_data=True,
@@ -57,6 +57,6 @@ setup(
     tests_require=test_requirements,
     setup_requires=setup_requirements,
     dependency_links=[
-     "git+https://github.com/CanDIG/ga4gh-server.git@experiment_genotype#egg=ga4gh_server"
+     "git+https://github.com/CanDIG/ga4gh-server.git@profyle#egg=ga4gh_server"
     ]
 )
