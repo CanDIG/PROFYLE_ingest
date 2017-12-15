@@ -107,6 +107,11 @@ for the ga4gh reads/variants server:)
     ga4gh_server
 
 
+and then, from a web browser:
+
+    https://127.0.0.1:8000/candig
+
+
 and then, from another terminal:
 
 .. code:: bash
