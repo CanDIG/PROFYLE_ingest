@@ -30,8 +30,8 @@ for the ga4gh reads/variants server:)
 .. code:: bash
 
     # Install
-    virtualenv profyle_test
-    cd profyle_test
+    virtualenv test_server
+    cd test_server
     source bin/activate
     pip install --upgrade pip
     pip install -U setuptools
