@@ -35,10 +35,10 @@ for the ga4gh reads/variants server:)
     source bin/activate
     pip install --upgrade pip
     pip install -U setuptools
-    pip install git+https://github.com/CanDIG/ga4gh-schemas.git@profyle#egg=ga4gh_schemas
-    pip install git+https://github.com/CanDIG/ga4gh-client.git@profyle#egg=ga4gh_client
-    pip install git+https://github.com/CanDIG/ga4gh-server.git@profyle#egg=ga4gh_server
-    pip install git+https://github.com/CanDIG/PROFYLE_ingest.git@profyle#egg=PROFYLE_ingest
+    pip install git+https://github.com/CanDIG/ga4gh-schemas.git@clinical_metadata#egg=ga4gh_schemas
+    pip install git+https://github.com/CanDIG/ga4gh-client.git@clinical_metadata#egg=ga4gh_client
+    pip install git+https://github.com/CanDIG/ga4gh-server.git@clinical_metadata#egg=ga4gh_server
+    pip install git+https://github.com/CanDIG/PROFYLE_ingest.git@clinical_metadata#egg=PROFYLE_ingest
 
     # setup initial peers
     mkdir -p ga4gh/server/templates
@@ -46,7 +46,7 @@ for the ga4gh reads/variants server:)
 
     # ingest profyle data and make the repo
     mkdir ga4gh-example-data
-    PROFYLE_ingest ga4gh-example-data/registry.db <path to example profake data, like: profake_test.json>
+    PROFYLE_ingest ga4gh-example-data/registry.db <path to example data, like: clinical_metadata_test.json>
 
     # optional
     # add peer site addresses
@@ -107,6 +107,7 @@ for the ga4gh reads/variants server:)
     ga4gh_server
 
 
+*** The federated dashboard with the new clinical metadata is not working temporary ***
 and then, from a web browser:
 
     https://127.0.0.1:8000/candig
