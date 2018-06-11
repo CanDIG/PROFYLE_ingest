@@ -6,13 +6,14 @@ information into it. It populates Individual, Biosample, Experiment and
 Analysis objects.
 
 Usage:
-  profyle_ingest.py <repo_filename> <metadata_json>
+  profyle_ingest.py <repo_filename> <dataset_name> <metadata_json>
 
 Options:
   -h --help        Show this screen
   -v --version     Version
   <repo_filename>  Path and filename of the ga4gh repository
-  <metadata_json>  Path and filename information to the profyle metadata json file.
+  <dataset_name>   Dataset name
+  <metadata_json>  Path and filename information to the metadata json file.
 
 """
 
@@ -134,12 +135,13 @@ def main():
     args = docopt(__doc__, version='profyle ingest 0.1')
     # Handle the passed arguments
     repo_filename = args['<repo_filename>']
+    dataset_name = args['<dataset_name>']
     metadata_json = args['<metadata_json>']
     # Read and parse profyle metadata json
     with open(metadata_json, 'r') as json_datafile:
         metadata = json.load(json_datafile, 'UTF-8')
     # Create a dataset
-    dataset = Dataset('METADATA')
+    dataset = Dataset(dataset_name)
     dataset.setDescription('METADATA TEST SERVER')
     # Open and load the data
     with GA4GHRepo(repo_filename) as repo:
@@ -213,36 +215,6 @@ def main():
             # Add object into the repo file
             repo.add_tumourboard(tumourboard_object)
 
-
-#        # Iterate through all people and add their data info the dataset
-#        for patient in metadata['profyle']:
-#
-#            patient_id = patient["individual"]["patient_id"]
-#
-#            # Individual
-#            individual = Individual(dataset, localId=patient_id)
-#            individual_object = individual.populateFromJson(
-#                json.dumps(patient["individual"]))
-#            # Biosample
-#            biosample = Biosample(dataset, localId=patient_id)
-#            biosample_object = biosample.populateFromJson(
-#                json.dumps(patient["biosample"]))
-#            biosample_object._individual_id = individual_object.getId()
-#            # Experiment
-#            experiment = Experiment(dataset, localId=patient_id)
-#            experiment_object = experiment.populateFromJson(
-#                json.dumps(patient["experiment"]))
-#            experiment_object._biosample_id = biosample_object.getId()
-#            # Analysis
-#            analysis = Analysis(dataset, localId=patient_id)
-#            analysis_object = analysis.populateFromJson(
-#                json.dumps(patient["analysis"]))
-#            analysis_object._experiment_id = experiment_object.getId()
-#            # Add object into the repo file
-#            repo.add_individual(individual_object)
-#            repo.add_biosample(biosample_object)
-#            repo.add_experiment(experiment_object)
-#            repo.add_analysis(analysis_object)
     return None
 
 if __name__ == "__main__":
