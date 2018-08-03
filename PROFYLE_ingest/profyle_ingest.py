@@ -45,12 +45,12 @@ class GA4GHRepo(object):
         self._repo = None
 
     def __enter__(self):
-        if os.path.isfile(self._filename):
-            os.remove(self._filename)
-
         self._repo = repo.SqlDataRepository(self._filename)
         self._repo.open(repo.MODE_WRITE)
-        self._repo.initialise()
+
+        if not os.path.isfile(self._filename):
+            self._repo.initialise()
+
         return self
 
     def __exit__(self, extype, value, traceback):
