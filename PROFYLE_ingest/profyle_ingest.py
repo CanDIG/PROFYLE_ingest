@@ -22,6 +22,7 @@ import os
 from docopt import docopt
 
 import ga4gh.server.datarepo as repo
+import ga4gh.server.exceptions as exceptions
 
 from ga4gh.server.datamodel.datasets import Dataset
 from ga4gh.server.datamodel.bio_metadata import Individual
@@ -146,7 +147,10 @@ def main():
     # Open and load the data
     with GA4GHRepo(repo_filename) as repo:
         # Add dataset
-        repo.add_dataset(dataset)
+        try:
+            repo.add_dataset(dataset)
+        except exceptions.DuplicateNameException:
+            pass
         # Iterate through all people and add their data info the dataset
         for individual in metadata['metadata']:
             # patient_id
