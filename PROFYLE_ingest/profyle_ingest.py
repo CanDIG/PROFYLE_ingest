@@ -285,7 +285,7 @@ def main():
                 # VariantCalling
                 variant_calling = VariantCalling(dataset, localId=sample_id)
                 variant_calling_object = variant_calling.populateFromJson(
-                    json.dumps(individual["Diagnosis"]))
+                    json.dumps(individual["VariantCalling"]))
                 # Add object into the repo file
                 repo.add_variant_calling(variant_calling_object)
 
