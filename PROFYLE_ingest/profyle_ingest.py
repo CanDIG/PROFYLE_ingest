@@ -89,7 +89,7 @@ class GA4GHRepo(object):
             },
             'Complication': {
                 'table': Complication,
-                'local_id': ["patientId", "complicationId"],
+                'local_id': ["patientId", "date"],
                 'repo_add': self.add_complication
             },
             'Tumourboard': {
