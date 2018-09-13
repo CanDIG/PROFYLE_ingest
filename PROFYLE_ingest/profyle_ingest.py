@@ -51,6 +51,87 @@ class GA4GHRepo(object):
         self._filename = filename
         self._repo = None
 
+        self.clinical_metadata_map = {
+            'Patient': {
+                'table': Patient,
+                'local_id': ['patientId'],
+                'repo_add': self.add_patient
+            },
+            'Enrollment': {
+                'table': Enrollment,
+                'local_id': ["patientId", "enrollmentApprovalDate"],
+                'repo_add': self.add_enrollment
+            },
+            'Consent': {
+                'table': Consent,
+                'local_id': ["patientId", "consentDate"],
+                'repo_add': self.add_consent
+            },
+            'Diagnosis': {
+                'table': Diagnosis,
+                'local_id': ["patientId", "diagnosisDate"],
+                'repo_add': self.add_diagnosis
+            },
+            'Sample': {
+                'table': Sample,
+                'local_id': ["patientId", "sampleId"],
+                'repo_add': self.add_sample
+            },
+            'Treatment': {
+                'table': Treatment,
+                'local_id': ["patientId", "startDate"],
+                'repo_add': self.add_treatment
+            },
+            'Outcome': {
+                'table': Outcome,
+                'local_id': ["patientId", "dateOfAssessment"],
+                'repo_add': self.add_outcome
+            },
+            'Complication': {
+                'table': Complication,
+                'local_id': ["patientId", "complicationId"],
+                'repo_add': self.add_complication
+            },
+            'Tumourboard': {
+                'table': Tumourboard,
+                'local_id': ["patientId", "dateOfMolecularTumorBoard"],
+                'repo_add': self.add_tumourboard
+            }
+        }
+
+        self.pipeline_metadata_map = {
+            'Extraction': {
+                'table': Extraction,
+                'local_id': ["sampleId", "extractionId"],
+                'repo_add': self.add_extraction
+            },
+            'Sequencing': {
+                'table': Sequencing,
+                'local_id': ["sampleId", "sequencingId"],
+                'repo_add': self.add_sequencing
+            },
+            'Alignment': {
+                'table': Alignment,
+                'local_id': ["sampleId", "alignmentId"],
+                'repo_add': self.add_alignment
+            },
+            'VariantCalling': {
+                'table': VariantCalling,
+                'local_id': ["sampleId", "variantCallingId"],
+                'repo_add': self.add_variant_calling
+            },
+            'FusionDetection': {
+                'table': FusionDetection,
+                'local_id': ["sampleId", "fusionDetectionId"],
+                'repo_add': self.add_fusion_detection
+            },
+            'ExpressionAnalysis': {
+                'table': ExpressionAnalysis,
+                'local_id': ["sampleId", "expressionAnalysisId"],
+                'repo_add': self.add_expression_analysis
+            }
+        }
+
     def __enter__(self):
         self._repo = repo.SqlDataRepository(self._filename)
         self._repo.open(repo.MODE_WRITE)
@@ -187,123 +268,31 @@ def main():
             repo.add_dataset(dataset)
         except exceptions.DuplicateNameException:
             pass
-        # Iterate through all people and add their data info the dataset
-        if 'metadata' in metadata:
-            for individual in metadata['metadata']:
-                # patient_id
-                patient_id = individual["Patient"]["patientId"]
 
-                # Patient
-                patient = Patient(dataset, localId=patient_id)
-                patient_object = patient.populateFromJson(
-                    json.dumps(individual["Patient"]))
-                # Add object into the repo file
-                repo.add_patient(patient_object)
+        metadata_map = {
+            'metadata': repo.clinical_metadata_map,
+            'pipeline_metadata': repo.pipeline_metadata_map
+        }
+        metadata_key = metadata.keys()[0]
 
-                # Enrollment
-                enrollment = Enrollment(dataset, localId=patient_id)
-                enrollment_object = enrollment.populateFromJson(
-                    json.dumps(individual["Enrollment"]))
-                # Add object into the repo file
-                repo.add_enrollment(enrollment_object)
+        # Iterate through metadata file type based on key and update the dataset
+        for individual in metadata[metadata_key]:
 
-                # Consent
-                consent = Consent(dataset, localId=patient_id)
-                consent_object = consent.populateFromJson(
-                    json.dumps(individual["Consent"]))
-                # Add object into the repo file
-                repo.add_consent(consent_object)
+            for table in individual:
+                if table in metadata_map[metadata_key]:
+                    record = individual[table]
+                    local_id_list = [record[x] for x in metadata_map[metadata_key][table]['local_id']]
+                    local_id = "_".join(local_id_list)
 
-                # Diagnosis
-                diagnosis = Diagnosis(dataset, localId=patient_id)
-                diagnosis_object = diagnosis.populateFromJson(
-                    json.dumps(individual["Diagnosis"]))
-                # Add object into the repo file
-                repo.add_diagnosis(diagnosis_object)
+                    obj = metadata_map[metadata_key][table]['table'](dataset, localId=local_id)
+                    repo_obj = obj.populateFromJson(json.dumps(record))
 
-                # Sample
-                sample = Sample(dataset, localId=patient_id)
-                sample_object = sample.populateFromJson(
-                    json.dumps(individual["Sample"]))
-                # Add object into the repo file
-                repo.add_sample(sample_object)
-
-                # Treatment
-                treatment = Treatment(dataset, localId=patient_id)
-                treatment_object = treatment.populateFromJson(
-                    json.dumps(individual["Treatment"]))
-                # Add object into the repo file
-                repo.add_treatment(treatment_object)
-
-                # Outcome
-                outcome = Outcome(dataset, localId=patient_id)
-                outcome_object = outcome.populateFromJson(
-                    json.dumps(individual["Outcome"]))
-                # Add object into the repo file
-                repo.add_outcome(outcome_object)
-
-                # Complication
-                complication = Complication(dataset, localId=patient_id)
-                complication_object = complication.populateFromJson(
-                    json.dumps(individual["Complication"]))
-                # Add object into the repo file
-                repo.add_complication(complication_object)
-
-                # Tumourboard
-                tumourboard = Tumourboard(dataset, localId=patient_id)
-                tumourboard_object = tumourboard.populateFromJson(
-                    json.dumps(individual["Tumourboard"]))
-                # Add object into the repo file
-                repo.add_tumourboard(tumourboard_object)
-
-        elif 'pipeline_metadata' in metadata:
-            for individual in metadata['pipeline_metadata']:
-                # sample_id
-                sample_id = individual["Extraction"]["sampleId"]
-
-                # Patient
-                extraction = Extraction(dataset, localId=sample_id)
-                extraction_object = extraction.populateFromJson(
-                    json.dumps(individual["Extraction"]))
-                # Add object into the repo file
-                repo.add_extraction(extraction_object)
-
-                # Sequencing
-                sequencing = Sequencing(dataset, localId=sample_id)
-                sequencing_object = sequencing.populateFromJson(
-                    json.dumps(individual["Sequencing"]))
-                # Add object into the repo file
-                repo.add_sequencing(sequencing_object)
-
-                # Alignment
-                alignment = Alignment(dataset, localId=sample_id)
-                alignment_object = alignment.populateFromJson(
-                    json.dumps(individual["Alignment"]))
-                # Add object into the repo file
-                repo.add_alignment(alignment_object)
-
-                # VariantCalling
-                variant_calling = VariantCalling(dataset, localId=sample_id)
-                variant_calling_object = variant_calling.populateFromJson(
-                    json.dumps(individual["VariantCalling"]))
-                # Add object into the repo file
-                repo.add_variant_calling(variant_calling_object)
-
-                # FusionDetection
-                fusion_detection = FusionDetection(dataset, localId=sample_id)
-                fusion_detection_object = fusion_detection.populateFromJson(
-                    json.dumps(individual["FusionDetection"]))
-                # Add object into the repo file
-                repo.add_fusion_detection(fusion_detection_object)
-
-                # ExpressionAnalysis
-                expression_analysis = ExpressionAnalysis(dataset, localId=sample_id)
-                expression_analysis_object = expression_analysis.populateFromJson(
-                    json.dumps(individual["ExpressionAnalysis"]))
-                # Add object into the repo file
-                repo.add_expression_analysis(expression_analysis_object)
-
-
+                    # Add object into the repo file
+                    try:
+                        metadata_map[metadata_key][table]['repo_add'](repo_obj)
+                    except exceptions.DuplicateNameException:
+                        print("Skipped: Duplicate {0} detected for local name: {1} {2}".format(
+                            table, local_id, metadata_map[metadata_key][table]['local_id']))
 
     return None
 
