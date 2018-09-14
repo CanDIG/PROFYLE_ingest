@@ -257,7 +257,7 @@ def main():
     metadata_json = args['<metadata_json>']
     # Read and parse profyle metadata json
     with open(metadata_json, 'r') as json_datafile:
-        metadata = json.load(json_datafile, 'UTF-8')
+        metadata = json.load(json_datafile)
     # Create a dataset
     dataset = Dataset(dataset_name)
     dataset.setDescription('METADATA TEST SERVER')
@@ -273,7 +273,7 @@ def main():
             'metadata': repo.clinical_metadata_map,
             'pipeline_metadata': repo.pipeline_metadata_map
         }
-        metadata_key = metadata.keys()[0]
+        metadata_key = list(metadata.keys())[0]
 
         # Iterate through metadata file type based on key and update the dataset
         for individual in metadata[metadata_key]:
@@ -298,4 +298,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
