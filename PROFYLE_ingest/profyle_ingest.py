@@ -36,6 +36,14 @@ from ga4gh.server.datamodel.clinical_metadata import Treatment
 from ga4gh.server.datamodel.clinical_metadata import Outcome
 from ga4gh.server.datamodel.clinical_metadata import Complication
 from ga4gh.server.datamodel.clinical_metadata import Tumourboard
+from ga4gh.server.datamodel.clinical_metadata import Chemotherapy
+from ga4gh.server.datamodel.clinical_metadata import Radiotherapy
+from ga4gh.server.datamodel.clinical_metadata import Immunotherapy
+from ga4gh.server.datamodel.clinical_metadata import Surgery
+from ga4gh.server.datamodel.clinical_metadata import Celltransplant
+from ga4gh.server.datamodel.clinical_metadata import Slide
+from ga4gh.server.datamodel.clinical_metadata import Study
+from ga4gh.server.datamodel.clinical_metadata import Labtest
 from ga4gh.server.datamodel.bio_metadata import Experiment
 from ga4gh.server.datamodel.bio_metadata import Analysis
 from ga4gh.server.datamodel.pipeline_metadata import Extraction
@@ -96,9 +104,48 @@ class GA4GHRepo(object):
                 'table': Tumourboard,
                 'local_id': ["patientId", "dateOfMolecularTumorBoard"],
                 'repo_add': self.add_tumourboard
+            },
+            'Chemotherapy': {
+                'table': Chemotherapy,
+                'local_id': ["treatmentPlanId", "systematicTherapyAgentName"],
+                'repo_add': self.add_chemotherapy
+            },
+            'Radiotherapy': {
+                'table': Radiotherapy,
+                'local_id': ["treatmentPlanId", "startDate"],
+                'repo_add': self.add_radiotherapy
+            },
+            'Immunotherapy': {
+                'table': Immunotherapy,
+                'local_id': ["treatmentPlanId", "startDate"],
+                'repo_add': self.add_immunotherapy
+            },
+            'Surgery': {
+                'table': Surgery,
+                'local_id': ["treatmentPlanId", "startDate"],
+                'repo_add': self.add_surgery
+            },
+            'Celltransplant': {
+                'table': Celltransplant,
+                'local_id': ["treatmentPlanId", "startDate"],
+                'repo_add': self.add_celltransplant
+            },
+            'Slide': {
+                'table': Slide,
+                'local_id': ["patientId", "slideId"],
+                'repo_add': self.add_slide
+            },
+            'Study': {
+                'table': Study,
+                'local_id': ["patientId", "startDate"],
+                'repo_add': self.add_study
+            },
+            'Labtest': {
+                'table': Labtest,
+                'local_id': ["patientId", "startDate"],
+                'repo_add': self.add_labtest
             }
         }
-
         self.pipeline_metadata_map = {
             'Extraction': {
                 'table': Extraction,
@@ -193,6 +240,46 @@ class GA4GHRepo(object):
 
     def add_tumourboard(self, tumourboard):
         self._repo.insertTumourboard(tumourboard)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_chemotherapy(self, chemotherapy):
+        self._repo.insertChemotherapy(chemotherapy)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_radiotherapy(self, radiotherapy):
+        self._repo.insertRadiotherapy(radiotherapy)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_immunotherapy(self, immunotherapy):
+        self._repo.insertImmunotherapy(immunotherapy)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_surgery(self, surgery):
+        self._repo.insertSurgery(surgery)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_celltransplant(self, celltransplant):
+        self._repo.insertCelltransplant(celltransplant)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_slide(self, slide):
+        self._repo.insertSlide(slide)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_study(self, study):
+        self._repo.insertStudy(study)
+        self._repo.commit()
+        self._repo.verify()
+
+    def add_labtest(self, labtest):
+        self._repo.insertLabtest(labtest)
         self._repo.commit()
         self._repo.verify()
 
