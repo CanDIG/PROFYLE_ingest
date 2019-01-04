@@ -368,7 +368,18 @@ def main():
             for table in individual:
                 if table in metadata_map[metadata_key]:
                     record = individual[table]
-                    local_id_list = [record[x] for x in metadata_map[metadata_key][table]['local_id']]
+                    local_id_list = []
+                    for x in metadata_map[metadata_key][table]['local_id']:
+                        if record.get(x):
+                            local_id_list.append(record[x])
+                        else:
+                            local_id_list = None
+                            print("Skipped: Missing 1 or more primary identifiers for record in: {0} needs {1}".format(
+                                table, metadata_map[metadata_key][table]['local_id']))
+                            break
+                    if not local_id_list:
+                        continue
+
                     local_id = "_".join(local_id_list)
 
                     obj = metadata_map[metadata_key][table]['table'](dataset, localId=local_id)
