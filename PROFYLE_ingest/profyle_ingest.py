@@ -107,27 +107,27 @@ class GA4GHRepo(object):
             },
             'Chemotherapy': {
                 'table': Chemotherapy,
-                'local_id': ["treatmentPlanId", "systematicTherapyAgentName"],
+                'local_id': ["patientId", "treatmentPlanId", "systematicTherapyAgentName"],
                 'repo_add': self.add_chemotherapy
             },
             'Radiotherapy': {
                 'table': Radiotherapy,
-                'local_id': ["treatmentPlanId", "startDate"],
+                'local_id': ["patientId", "treatmentPlanId", "startDate"],
                 'repo_add': self.add_radiotherapy
             },
             'Immunotherapy': {
                 'table': Immunotherapy,
-                'local_id': ["treatmentPlanId", "startDate"],
+                'local_id': ["patientId", "treatmentPlanId", "startDate"],
                 'repo_add': self.add_immunotherapy
             },
             'Surgery': {
                 'table': Surgery,
-                'local_id': ["treatmentPlanId", "startDate"],
+                'local_id': ["patientId", "treatmentPlanId", "startDate"],
                 'repo_add': self.add_surgery
             },
             'Celltransplant': {
                 'table': Celltransplant,
-                'local_id': ["treatmentPlanId", "startDate"],
+                'local_id': ["patientId", "treatmentPlanId", "startDate"],
                 'repo_add': self.add_celltransplant
             },
             'Slide': {
