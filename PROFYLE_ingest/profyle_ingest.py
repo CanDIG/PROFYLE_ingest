@@ -112,7 +112,7 @@ class GA4GHRepo(object):
             },
             'Radiotherapy': {
                 'table': Radiotherapy,
-                'local_id': ["patientId", "treatmentPlanId", "startDate"],
+                'local_id': ["patientId", "courseNumber", "treatmentPlanId", "startDate"],
                 'repo_add': self.add_radiotherapy
             },
             'Immunotherapy': {
@@ -122,7 +122,7 @@ class GA4GHRepo(object):
             },
             'Surgery': {
                 'table': Surgery,
-                'local_id': ["patientId", "treatmentPlanId", "startDate"],
+                'local_id': ["patientId", "treatmentPlanId", "startDate", "sampleId"],
                 'repo_add': self.add_surgery
             },
             'Celltransplant': {
