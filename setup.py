@@ -13,7 +13,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     "docopt",
-    "ga4gh-server",
+    "candig-server",
     "numpy"
 ]
 
@@ -25,7 +25,7 @@ test_requirements = [
 
 setup(
     name='PROFYLE_ingest',
-    version='0.1.0',
+    version='0.2.0',
     description="Routines for ingesting PROFYLE metadata to GA4GH repository",
     long_description=readme + '\n\n' + history,
     author="Jonathan Dursi",
